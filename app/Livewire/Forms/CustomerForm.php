@@ -37,7 +37,6 @@ class CustomerForm extends Form
 
         $this->reset();
 
-
     }
 
     public function update()
@@ -52,8 +51,6 @@ class CustomerForm extends Form
         $this->customer->update($valid);
 
         $this->reset();
-
-        request()->session()->flash('message','Success');
 
     }
 }

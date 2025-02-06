@@ -37,6 +37,14 @@ class Actions extends Component
         $menu->delete();
 
         $this->dispatch('reload');
+
+        // Dispatch d'un événement personnalisé pour SweetAlert2
+        $this->dispatch('show-swal',
+            type: 'success',
+            title: 'Succès',
+            text: 'Menu supprimé avec succès.',
+        );
+    
     }
 
     public function ajouter()
@@ -48,8 +56,22 @@ class Actions extends Component
 
         if (isset($this->form->menu)) {
             $this->form->update();
+            // Dispatch d'un événement personnalisé pour SweetAlert2
+            $this->dispatch('show-swal',
+                type: 'success',
+                title: 'Succès',
+                text: 'Menu mis à jour avec succès.',
+            );
+
         }else{
             $this->form->store();
+            // Dispatch d'un événement personnalisé pour SweetAlert2
+            $this->dispatch('show-swal',
+                type: 'success',
+                title: 'Succès',
+                text: 'Menu ajouté avec succès.',
+            );
+
         }
 
         $this->closeModal();

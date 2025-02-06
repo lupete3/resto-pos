@@ -31,6 +31,14 @@ class Profile extends Component
         $this->user->update($valid);
 
         $this->password = '';
+
+        // Dispatch d'un événement personnalisé pour SweetAlert2
+        $this->dispatch('show-swal',
+            type: 'success',
+            title: 'Succès',
+            text: 'Profile modifié avec succès.',
+        );
+    
         
     }
 

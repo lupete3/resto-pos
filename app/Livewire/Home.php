@@ -13,6 +13,13 @@ class Home extends Component
     {
         $transaction->done = !$transaction->done;
         $transaction->save();
+        // Dispatch d'un événement personnalisé pour SweetAlert2
+        $this->dispatch('show-swal',
+            type: 'success',
+            title: 'Succès',
+            text: 'Vente clôturée avec succès.',
+        );
+    
     }
 
     

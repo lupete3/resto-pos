@@ -1,3 +1,6 @@
+import Swal from 'sweetalert2';
+window.Swal = Swal;
+
 import './bootstrap';
 
 function printFacture(url) {

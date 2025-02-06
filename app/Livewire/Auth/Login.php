@@ -23,6 +23,14 @@ class Login extends Component
 
         if (Auth::attempt($valid)) {
             $this->redirect(route('home'), true);
+        }else {
+            // Dispatch d'un événement personnalisé pour SweetAlert2
+            $this->dispatch('show-swal',
+                type: 'error',
+                title: 'Erreur',
+                text: 'Cordonnées invalides.',
+            );
+
         }
     }
 

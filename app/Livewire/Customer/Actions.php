@@ -38,6 +38,14 @@ class Actions extends Component
         $customer->delete();
 
         $this->dispatch('reload');
+
+        // Dispatch d'un événement personnalisé pour SweetAlert2
+        $this->dispatch('show-swal',
+            type: 'success',
+            title: 'Succès',
+            text: 'Client supprimé avec succès.',
+        );
+    
     }
 
     public function ajouter()
@@ -45,12 +53,21 @@ class Actions extends Component
 
         if (isset($this->form->customer)) {
             $this->form->update();
-            request()->session()->flash('message','Success');
-
+            // Dispatch d'un événement personnalisé pour SweetAlert2
+            $this->dispatch('show-swal',
+                type: 'success',
+                title: 'Succès',
+                text: 'Cient mis à jour avec succès.',
+            );
 
         }else{
             $this->form->store();
-            request()->session()->flash('message','Success');
+            // Dispatch d'un événement personnalisé pour SweetAlert2
+            $this->dispatch('show-swal',
+                type: 'success',
+                title: 'Succès',
+                text: 'Client ajouté avec succès.',
+            );
 
         }
 

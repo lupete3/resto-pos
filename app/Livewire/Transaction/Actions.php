@@ -37,6 +37,14 @@ class Actions extends Component
             ];
         }
 
+        // Dispatch d'un événement personnalisé pour SweetAlert2
+        $this->dispatch('show-swal',
+            type: 'success',
+            title: 'Succès',
+            text: 'Produit ajouté au panier avec succès.',
+        );
+    
+
     }
 
     public function removeItem($key)
@@ -58,6 +66,14 @@ class Actions extends Component
             unset($this->items[$key]);
 
         }
+
+        // Dispatch d'un événement personnalisé pour SweetAlert2
+        $this->dispatch('show-swal',
+            type: 'success',
+            title: 'Succès',
+            text: 'Panier mis à jour avec succès.',
+        );
+    
     }
 
     public function addItemQte($key)
@@ -71,11 +87,27 @@ class Actions extends Component
         $this->items[$key]['qte'] = $newQte;
 
         $this->items[$key]['price'] = $newPrice * $newQte;
+
+        // Dispatch d'un événement personnalisé pour SweetAlert2
+        $this->dispatch('show-swal',
+            type: 'success',
+            title: 'Succès',
+            text: 'Panier mis à jour avec succès.',
+        );
+    
     }
 
     public function removePanier()
     {
         $this->items = [];
+
+        // Dispatch d'un événement personnalisé pour SweetAlert2
+        $this->dispatch('show-swal',
+            type: 'success',
+            title: 'Succès',
+            text: 'Panier vidée avec succès.',
+        );
+    
     }
 
 
@@ -106,6 +138,14 @@ class Actions extends Component
         }
 
         $this->redirect(route('transaction.index'), true);
+
+        // Dispatch d'un événement personnalisé pour SweetAlert2
+        $this->dispatch('show-swal',
+            type: 'success',
+            title: 'Succès',
+            text: 'Commande ajoutée avec succès.',
+        );
+    
 
     }
 
