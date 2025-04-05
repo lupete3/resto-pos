@@ -44,7 +44,7 @@ class Actions extends Component
             title: 'Succès',
             text: 'Menu supprimé avec succès.',
         );
-    
+
     }
 
     public function ajouter()
@@ -55,6 +55,10 @@ class Actions extends Component
         }
 
         if (isset($this->form->menu)) {
+            if ($this->photo) {
+                $this->form->photo = $this->photo->hashName('menu');
+                $this->photo->store('menu');
+            }
             $this->form->update();
             // Dispatch d'un événement personnalisé pour SweetAlert2
             $this->dispatch('show-swal',

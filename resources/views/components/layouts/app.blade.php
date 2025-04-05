@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ $title ?? 'Page Title' }}</title>
         @livewireStyles
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+        <link rel="stylesheet" href="{{ asset('build/assets/app-BGbrsgGA.css') }}">
+        <script src="{{ asset('build/assets/app-B9qKiYja.js') }}"></script>
     </head>
     <body class="bg-base-200 min-h-screen">
         <!-- Autres éléments du layout -->
@@ -28,13 +30,13 @@
                 {{ $slot }}
             </div>
         @endguest
-    
+
         <!-- Script pour SweetAlert2 -->
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 window.addEventListener('show-swal', event => {
                     const { type, title, text } = event.detail;
-    
+
                     Swal.fire({
                         icon: type,
                         title: title,
@@ -48,7 +50,7 @@
                 });
             });
         </script>
-    
+
         @livewireScripts
     </body>
 </html>

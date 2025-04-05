@@ -2,11 +2,14 @@
 
 namespace App\Livewire\Customer;
 
-use App\Models\Customer;
 use Livewire\Component;
+use App\Models\Customer;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+    
     public $search;
 
     public $num = 1;
@@ -22,7 +25,7 @@ class Index extends Component
                 $menu->where('name', 'like', '%'.$this->search.'%')
                 ->orWhere('contact', 'like', '%'.$this->search.'%')
                 ->orWhere('adress', 'like', '%'.$this->search.'%');
-            })->paginate(10)
+            })->paginate(8)
         ]);
     }
 }

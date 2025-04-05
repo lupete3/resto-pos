@@ -81,12 +81,10 @@
                 @endforeach
             </tbody>
         </table>
-        <div class="text-center">
-            {{-- <nav>
-                <ul class="inline-flex -space-x-px text-sm">
-                    {{ $menus->links('pagination::tailwind') }}
-                </ul>
-            </nav>            --}}
-        </div>
     </div>
+
+    <div class="table-pagination text-center">
+        {{ $ventes->links('vendor.livewire.tailwind') }}
+    </div>
+
 </div>

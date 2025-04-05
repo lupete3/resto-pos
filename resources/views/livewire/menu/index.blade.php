@@ -59,7 +59,7 @@
 
     </div>
     <div class="table-pagination text-center">
-        {{ $menus->links('pagination::tailwind') }}
+        {{ $menus->links('vendor.livewire.tailwind') }}
     </div>
 
     @livewire('menu.actions')

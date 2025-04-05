@@ -2,6 +2,10 @@ import Swal from 'sweetalert2';
 window.Swal = Swal;
 
 import './bootstrap';
+import { Livewire } from '@livewire/core';
+Livewire.start();
+
+alert('');
 
 function printFacture(url) {
 
@@ -19,4 +23,4 @@ function printFacture(url) {
 }
 
 window.printFacture = printFacture;
-  
+

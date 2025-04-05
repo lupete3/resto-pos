@@ -4,9 +4,12 @@ namespace App\Livewire;
 
 use App\Models\Transaction;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Home extends Component
 {
+    use WithPagination;
+
     public $num = 1;
     
     public function isVente(Transaction $transaction)
@@ -32,7 +35,7 @@ class Home extends Component
         return view('livewire.home', [
             'ventesMensuelles' => $ventes->get()->sum('price'),
             'ventesJournalieres' => $ventes->whereDate('created_at', date('Y-m-d'))->get(),
-            'ventes' => Transaction::where('done', false)->latest()->get()
+            'ventes' => Transaction::where('done', false)->latest()->paginate(10)
         ]);
     }
 }

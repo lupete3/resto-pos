@@ -33,6 +33,6 @@ class Menu extends Model
 
     public function getAvatarAttribute()
     {
-        return $this->photo ? Storage::url($this->photo) : url('noimages.png');
+        return $this->photo ? Storage::url('app/public/'.$this->photo) : url('noimages.png');
     }
 }

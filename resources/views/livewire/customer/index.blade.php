@@ -54,8 +54,9 @@
             </tbody>
         </table>
     </div>
-    <div class="table-pagination text-center ">
-        {{ $customers->links('pagination::tailwind') }}
+    
+    <div class="table-pagination text-center">
+        {{ $customers->links('vendor.livewire.tailwind') }}
     </div>
 
     @livewire('customer.actions')

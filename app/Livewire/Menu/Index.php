@@ -28,7 +28,7 @@ class Index extends Component
                 ->orWhere('price', 'like', '%'.$this->search.'%')
                 ->orWhere('type', 'like', '%'.$this->search.'%')
                 ->orWhere('description', 'like', '%'.$this->search.'%');
-            })->paginate(6)
+            })->paginate(8)
         ]);
     }
 }

@@ -2,11 +2,14 @@
 
 namespace App\Livewire\Transaction;
 
-use App\Models\Transaction;
 use Livewire\Component;
+use App\Models\Transaction;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+    
     public $num = 1;
 
     public $date;
@@ -48,7 +51,7 @@ class Index extends Component
 
             'ventes' => Transaction::when($this->date, function($transaction){
                 $transaction->whereDate('created_at', $this->date);
-            })->latest()->get()
+            })->latest()->paginate(10)
 
         ]);
     }
