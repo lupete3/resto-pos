@@ -5,9 +5,9 @@ use App\Livewire\Home;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 
-Livewire::setScriptRoute(function ($handle) {
-    return Route::get('/gresto/vendor/livewire/livewire.js', $handle);
-});
+// Livewire::setScriptRoute(function ($handle) {
+//     return Route::get('/gresto/vendor/livewire/livewire.js', $handle);
+// });
 
 Livewire::setUpdateRoute(function ($handle) {
     return Route::post('/gresto/public/livewire/update', $handle);

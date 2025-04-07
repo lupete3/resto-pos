@@ -1,8 +1,8 @@
 <div class="page-rwapper">
-  
+
     <div class="flex flex-col md:flex-row justify-between gap-2">
         <input type="date" class="input input-bordered" wire:model.lazy='date'>
-        <a href="{{ route('transaction.create') }}" class="btn btn-primary">
+        <a href="{{ route('transaction.create') }}" class="btn btn-primary" wire:navigate>
             <x-tabler-plus class="size-5" />
             <span>Ajouter vente</span>
         </a>
@@ -66,7 +66,7 @@
 
 
     </div>
-    
+
     <div class="table-pagination text-center">
         {{ $ventes->links('vendor.livewire.tailwind') }}
     </div>

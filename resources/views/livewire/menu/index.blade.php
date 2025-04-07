@@ -14,7 +14,7 @@
                 <th>#</th>
                 <th>Menu</th>
                 <th>Prix</th>
-                <th>Drscription</th>
+                <th>Description</th>
                 <th class="text-center">Actions</th>
             </thead>
             <tbody>

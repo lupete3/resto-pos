@@ -108,7 +108,7 @@
                                     <span class="font-light text-sm text-gray-400">{{ $item->type }}</span>
                                     <span class="self-end font-bold text-lg text-yellow-500 px-2 mt-4">{{ $item->price }}Fc</span>
                                 </div>
-                                <div class=" ">
+                                <div class="">
                                     <img src="{{ $item->avatar }}" class=" h-24 object-cover rounded-md"  alt="{{ $item->name }}">
                                 </div>
                             </button>
